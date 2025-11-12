@@ -1,0 +1,31 @@
+<?php
+
+namespace Database\Seeders;
+use App\Models\Procedure;
+
+use Illuminate\Database\Seeder;
+
+class ProcedureSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $procedures = [
+            'Consulta',
+            'Retorno',
+            'Exame de Sangue',
+            'Raio-X',
+            'Limpeza',
+            'Cirurgia Simples',
+            'Vacina',
+        ];
+
+        foreach ($procedures as $procedure) {
+            Procedure::create([
+                'name' => $procedure,
+            ]);
+        }
+    }
+}
